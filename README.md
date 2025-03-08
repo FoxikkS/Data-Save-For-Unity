@@ -10,7 +10,7 @@ This system allows you to save and load data in Unity using JSON files. It suppo
 ## Instructions
 
 ### 1. Adding the Script
-Save the `PlayerDataSaver` code in a file called `PlayerDataSaver.cs` inside the **`Scripts`** folder of your Unity project.  
+Save the `PlayerDataSave` code in a file called `PlayerDataSave.cs` inside the **`Scripts`** folder of your Unity project.  
 Ensure that you have the `Newtonsoft.Json` package installed via NuGet or Unity Package Manager.
 
 ### 2. Creating a Data Class
@@ -27,7 +27,7 @@ public class PlayerData
 ```
 
 ### 3. Saving Data
-Use the `PlayerDataSaver.Save()` method to save an instance of your data class:
+Use the `PlayerDataSave.Save()` method to save an instance of your data class:
 
 ```csharp
 void SaveGame()
@@ -39,20 +39,20 @@ void SaveGame()
         Score = 1500
     };
 
-    PlayerDataSaver.Save(player);
+    PlayerDataSave.Save(player);
     Debug.Log("Data saved!");
 }
 ```
 
 ### 4. Loading Data
-Use `PlayerDataSaver.Load<T>()` to load saved data:
+Use `PlayerDataSave.Load<T>()` to load saved data:
 
 ```csharp
 void LoadGame()
 {
     if (File.Exists(Application.persistentDataPath + "/SavePlayerData.json"))
     {
-        PlayerData player = PlayerDataSaver.Load<PlayerData>();
+        PlayerData player = PlayerDataSave.Load<PlayerData>();
         Debug.Log($"Loaded: {player.Name}, Level: {player.Level}, Score: {player.Score}");
     }
     else
@@ -86,12 +86,12 @@ public class GameManager : MonoBehaviour
     void SaveGame()
     {
         PlayerData player = new PlayerData { Name = "Name", Level = 5, Score = 2000 };
-        PlayerDataSaver.Save(player);
+        PlayerDataSave.Save(player);
     }
 
     void LoadGame()
     {
-        PlayerData player = PlayerDataSaver.Load<PlayerData>();
+        PlayerData playe = PlayerDataSave.Load<PlayerData>();
         Debug.Log($"Loaded: {player.Name}, Level: {player.Level}, Score: {player.Score}");
     }
 }
