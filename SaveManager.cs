@@ -25,7 +25,7 @@ public static class PlayerDataSaver
     {
         try
         {
-            if (File.Exists(_savePath)) // Теперь проверка корректная
+            if (File.Exists(_savePath))
             {
                 string json = File.ReadAllText(_savePath);
                 return JsonConvert.DeserializeObject<T>(json);
