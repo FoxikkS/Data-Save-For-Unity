@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     void SaveGame()
     {
-        PlayerData player = new PlayerData { Name = "Fox", Level = 5, Score = 2000 };
+        PlayerData player = new PlayerData { Name = "Name", Level = 5, Score = 2000 };
         PlayerDataSaver.Save(player);
     }
 
