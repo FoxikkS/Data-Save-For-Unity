@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
 
-public static class PlayerDataSaver
+public static class PlayerDataSave
 {
     private static readonly string _savePath = Application.persistentDataPath + "/SavePlayerData.json";
     
