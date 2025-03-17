@@ -3,7 +3,7 @@
 This system allows you to save and load data in Unity using JSON files. It supports saving and loading **any data type** with generic methods `<T>`.
 
 ## Features
-- **Save** and **load** data to/from a JSON file.
+- **Save** and **load** data to/from a JSON.
 - **Supports all data types** with generic methods.
 - Simple, easy-to-use implementation with error handling.
 
